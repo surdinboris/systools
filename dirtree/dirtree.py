@@ -10,9 +10,9 @@ def errorhandl(func):
     def wrapper(*args,**kwargs):
         try:
             func(*args,**kwargs)
-        except (FileNotFoundError, PermissionError):
+        except (FileNotFoundError, PermissionError,UnicodeEncodeError):
             type, value, traceback = sys.exc_info()
-            errors[args] = ('Error opening %s: %s' % (value.filename, value.strerror))
+            errors[args] = ('Error opening %s: %s' % (value, type))
             pass
     return wrapper
 
@@ -21,7 +21,7 @@ def mainiter(sordir):
     tre = {}
     for subitem in os.listdir(sordir):
         fullpath = os.path.join(sordir, subitem)
-        #print("searching in %s" %subitem)
+        print("searching in %s" %subitem)
         if os.path.isdir(fullpath):
             tre[subitem] = {sordir: 'dir'}
             if searchpf == subitem:
