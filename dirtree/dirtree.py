@@ -2,7 +2,7 @@ import os
 import sys
 sys.setrecursionlimit(10000000)
 basedir = 'c:/'
-searchpf='1115-connection.xlsx'
+searchpf='calc.exe'
 result=[]
 errors={}
 
