@@ -39,5 +39,5 @@ def mainiter(sordir):
                 mainiter(nloop)
 
 mainiter(basedir)
-print(result)
+print('results %s' %result)
 print(errors)
