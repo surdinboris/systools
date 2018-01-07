@@ -25,12 +25,12 @@ def mainiter(sordir):
         if os.path.isdir(fullpath):
             tre[subitem] = {sordir: 'dir'}
             if searchpf == subitem:
-                print('found')
+                print('something found')
                 result.append(fullpath)
         if os.path.isfile(fullpath):
             tre[subitem] = {sordir: 'fil'}
             if searchpf == subitem:
-                print('found')
+                print('something found')
                 result.append(fullpath)
     for ki, it in tre.items():
         for k, i in it.items():
